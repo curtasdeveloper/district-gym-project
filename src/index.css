@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Add these animations to your index.css */
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+.slide-in {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+.fade-out {
+  animation: slideUp 0.5s ease-in forwards;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.main-introduction {
+    box-shadow:  50px 50px 100px #cecece,
+                 -50px -50px 100px #f2f2f2;
+}
+/* In your index.css or in the <head> of your HTML */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+.jersey-15-regular {
+    font-family: "Jersey 15", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200..800&family=Jersey+15&display=swap');
+.modal, .overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.overlay {
+  background: rgba(49,49,49,0.8);
+}
+
+.join-us-form {
+  width: 40vw;
+  height: 50vh;
+  background-color: #f2f2f2;
+  max-width: 600px; /* Prevents it from becoming too wide on larger screens */
+  min-width: 300px; /* Ensures usability on smaller screens */
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 0 auto; /* Centers the form */
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+  .join-us-form {
+    width: 60vw;
+    height: 50vh;
+  }
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 480px) {
+  .join-us-form {
+    width: 80vw;
+    height: auto;
+    padding: 15px;
+  }
+}
+
+
+.bg-custom {
+  background-color: transparent;
+  background-image: radial-gradient(#000000 1px, #e5e5f7 1px);
+  background-size: 30px 30px;
+}
+.bg-tri-color {
+  --bg: radial-gradient(#000 5%, #0000 6%);
+  --size: 3rem;
+  /* Add your background pattern here */
+  /* background-color: lightblue; */
+  background-image: radial-gradient(#F59E0B 5%, #0000 6%),
+    radial-gradient(#000 5%, #0000 6%);
+  background-position: 0 0, calc(var(--size) / 2) calc(var(--size) / 2);
+  background-size: var(--size) var(--size);
+}
+.stripes-x {
+  background: repeating-linear-gradient(
+    315deg,
+    #F59E0B,
+    #F59E0B 10px,
+    black 10px,
+    black 20px
+  );
+  z-index: 2;
+}
+.stripes-y {
+  background: repeating-linear-gradient(
+    45deg,
+    #F59E0B,
+    #F59E0B 10px,
+    white 10px,
+    white 20px
+  );
+}
+/* Add this CSS for the slide-in effect */
+.bmi-result {
+  transform: translateY(-100%); /* Initially place the element off-screen */
+  transition: transform 0.8s ease-out; /* Smooth transition */
+}
+
+.bmi-result.show {
+  transform: translateY(0); /* Move to normal position */
+}
+#successPopUp {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(49,49,49,0.8);
+}
